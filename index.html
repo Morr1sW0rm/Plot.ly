@@ -26,11 +26,25 @@
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
   <script>
-    var data = [{
-     x: ['Credit', 'ACH', 'Check'],
-     y: [320, 780, 178],
-     type: 'Vendor'
-     }];
+    var trace1 = {
+  x: ['Credit', 'ACH', 'Check'],
+  y: [120, 256, 83],
+  name: 'Company 1',
+  type: 'bar'
+};
+
+var trace2 = {
+  x: ['Credit', 'ACH', 'Check'],
+  y: [74, 32, 45],
+  name: 'Company 5',
+  type: 'bar'
+};
+
+var data = [trace1, trace2];
+
+var layout = {barmode: 'stack'};
+
+Plotly.newPlot('myDiv', data, layout);
 
      Plotly.newPlot('myDiv', data);
   </script>
